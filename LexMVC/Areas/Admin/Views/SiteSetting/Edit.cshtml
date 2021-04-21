@@ -1,0 +1,45 @@
+﻿@model LexMVC.Models.SiteSetting
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/SiteSetting/Index">SiteSetting</a>
+        </li>
+        <li class="breadcrumb-item active">Update</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> About
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Update", "SiteSetting", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.SettingsId)
+                    <div class="form-group">
+                        <label class="control-label">
+                            Is Blog Activated? @Html.CheckBoxFor(model => model.IsBlogEnabled, new { htmlAttributes = new { value = "true", type = "checkbox" } })
+
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">
+                            Use small footer? @Html.CheckBoxFor(model => model.UseSmallFooter, new { htmlAttributes = new { value = "true", type = "checkbox" } })
+
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

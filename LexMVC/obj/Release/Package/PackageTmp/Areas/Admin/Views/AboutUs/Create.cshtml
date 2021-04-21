@@ -1,0 +1,57 @@
+﻿@model LexMVC.Areas.Admin.Models.AboutUsModel
+@{
+    ViewData["Title"] = "Create about us";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Aboutus/Index">About us</a>
+        </li>
+        <li class="breadcrumb-item active">Create</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> About us
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                @using (Html.BeginForm("Create", "AboutUs", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label class="control-label">Title</label>
+                        <input name="Title" id="Title" class="form-control" required>
+                        @*@Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })*@
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Description</label>
+                        <textarea name="Details" id="Details" class="summernote" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Image</label>
+                        @*@Html.EditorFor(model => model.ImageFile, new { htmlAttributes = new { @class = "form-control", @type = "file" } })*@
+                        <input type="file" name="file" id="file" class="form-control dropify" />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.dropify').dropify();
+            $('.summernote').summernote({
+                tabsize: 2,
+                height: 500
+            });
+        });
+
+    </script>
+}

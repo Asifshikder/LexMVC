@@ -1,0 +1,55 @@
+﻿@model LexMVC.Models.SiteSetting
+@{
+    ViewData["Title"] = "Index";
+    string blogres = "Not set yet";
+    string smfooterres = "Not set yet";
+    if (Model != null)
+    {
+        blogres = Model.IsBlogEnabled == true ? "Yes" : "No";
+        smfooterres = Model.UseSmallFooter == true ? "Yes" : "No";
+    }
+
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/SiteSetting/Index">SiteSetting</a>
+        </li>
+        <li class="breadcrumb-item active">Index</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> SiteSetting
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a class="btn btn-outline-success" href="/Admin/SiteSetting/Edit?id=@Model.SettingsId"><i class="fa fa-edit"></i>Edit</a>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Is blog activated?</p>
+                        <p>@blogres</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Use small footer?</p>
+                        <p>@smfooterres</p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+
+                    <div class="col-md-12 text-center">
+                        <a href="/Admin/SiteSetting/Create" class="btn btn-outline-primary"><i class="fa fa-plus"></i>Create</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

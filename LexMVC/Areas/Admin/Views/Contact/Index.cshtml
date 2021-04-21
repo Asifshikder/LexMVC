@@ -1,0 +1,51 @@
+﻿@model LexMVC.Models.ContactUs
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Contact/Index">Contact us</a>
+        </li>
+        <li class="breadcrumb-item active">Index</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> Contact us
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a  class="btn btn-outline-success" href="/Admin/Contact/Edit?id=@Model.ContactUsId"><i class="fa fa-edit"></i>Edit</a>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Title</p>
+                        <p>@Model.Title</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Details</p>
+                        <p>@Html.Raw(Model.Description)</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Map</p>
+                        <p>@Html.Raw(Model.MapUrl)</p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+
+                    <div class="col-md-12 text-center">
+                        <a href="/Admin/Contact/Create" class="btn btn-outline-primary"><i class="fa fa-plus"></i>Create</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

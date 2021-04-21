@@ -1,0 +1,450 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title> @ViewData["title"] - LEXPERT LLC</title>
+
+    <meta name="description" content="Lextpert llc">
+    <meta name="keywords" content="Lextpert, Best hidden camera, hidden charger camera, spy camera, charger with camera, iphone camera charger, charger, camera">
+    <meta name="author" content="Zerifus , zerifus.com lexpert llc">
+    <link rel="shortcut icon" type="image/x-icon" href="~/Assets/assets/img/Logotransparent.png">
+
+    <link href="~/Assets/assets/css/bootstrap.css" rel="stylesheet">
+    <link href="~/Assets/assets/css/custom.css" rel="stylesheet">
+    <link href="~/Assets/assets/css/carousel.css" rel="stylesheet">
+    <link href="~/Assets/assets/css/carousel-product.css" rel="stylesheet">
+
+    <link href="~/Assets/assets/ionicons-2.0.1/css/ionicons.css" rel="stylesheet">
+    <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+    <link href='https://fonts.googleapis.com/css?family=Catamaran:400,100,300' rel='stylesheet' type='text/css'>
+
+    <link href="~/Assets/assets/css/custom-scroll/jquery.mCustomScrollbar.css" rel="stylesheet">
+
+    <style>
+        h1 {
+        }
+
+        .hero-text {
+            width: 100%;
+            font-size: 90px;
+        }
+
+        .carousel-height {
+            height: 600px;
+        }
+
+        @@media screen and (max-width: 480px) {
+            h1 {
+                font-size: 30px !important;
+                line-height: 80%;
+                margin-top: 100px;
+            }
+
+            .hero-text {
+                width: 100%;
+                color: rgb(6 6 6);
+                font-size: 30px;
+            }
+        }
+
+        @@media screen and (max-width: 480px) {
+            .carousel-height {
+                height: 260px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="cart" data-toggle="inactive">
+
+        <div class="overlay"></div>
+
+        <div class="window">
+            <div class="title">
+                <button type="button" class="close"><i class="ion-android-close"></i></button>
+                <h4>Search</h4>
+            </div>
+
+            <div class="content">
+
+                <div class="media">
+
+                    <div class="media-body">
+                        <form method="get">
+                            <input class="form-control" type="text" />
+                            <input class="btn btn-primary btn-block black" value="Search" type="button" />
+                        </form>
+                    </div>
+
+                </div>
+
+            </div>
+
+        </div>
+    </div>
+
+
+    @Html.Partial("_NavbarPartial")
+
+    @*<section class="products">
+            <div class="container">
+                <h2 class="h2 upp align-center"> Hybrid devices</h2>
+                <hr class="offset-lg">
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-4 product">
+                        <div class="body">
+                            <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+                            <a href="./"><img src="~/Assets/assets/img/products/lenovo-yoga.jpg" alt="Lenovo Yoga 900" /></a>
+
+                            <div class="content align-center">
+                                <p class="price">$1899.99</p>
+                                <h2 class="h3">Lenovo Yoga 900</h2>
+                                <hr class="offset-sm">
+
+                                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
+                                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 product">
+                        <div class="body">
+                            <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+                            <a href="./"><img src="~/Assets/assets/img/products/surface-pro.jpg" alt="Surface Pro" /></a>
+
+                            <div class="content align-center">
+                                <p class="sale">$2099.99</p>
+                                <p class="price through">$2499.99</p>
+                                <h2 class="h3">Microsoft Surface Pro</h2>
+                                <hr class="offset-sm">
+
+                                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
+                                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 product">
+                        <div class="body">
+                            <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+                            <a href="./"><img src="~/Assets/assets/img/products/hp-spectre-x360.jpg" alt="HP Spectre x360" /></a>
+
+                            <div class="content align-center">
+                                <p class="price">$2994.99</p>
+                                <h2 class="h3">HP Spectre x360</h2>
+                                <hr class="offset-sm">
+
+                                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
+                                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 product visible-sm">
+                        <div class="body">
+                            <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+                            <a href="./"><img src="~/Assets/assets/img/products/dell-inspiron-2in1.jpg" alt="Dell Inspiron 7000 2-in-1s" /></a>
+
+                            <div class="content align-center">
+                                <p class="price">$1994.99</p>
+                                <h2 class="h3">Dell Inspiron 7000</h2>
+                                <hr class="offset-sm">
+
+                                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
+                                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="align-right align-center-xs">
+                    <hr class="offset-sm">
+                    <a href="./store/"> <h5 class="upp">View all devices </h5> </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="products">
+            <div class="container">
+                <h2 class="h2 upp align-center"> Tablets</h2>
+                <hr class="offset-lg">
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-4 product">
+                        <div class="body">
+                            <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+                            <a href="./"><img src="~/Assets/assets/img/products/mi-pad-2.jpg" alt="Xiamomi Mi Pad 2" /></a>
+
+                            <div class="content align-center">
+                                <p class="price">$899.99</p>
+                                <h2 class="h3">Mi Pad 2</h2>
+                                <hr class="offset-sm">
+
+                                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
+                                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 product">
+                        <div class="body">
+                            <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+                            <a href="./"><img src="~/Assets/assets/img/products/ipad-air.jpg" alt="Apple iPad Air" /></a>
+
+                            <div class="content align-center">
+                                <p class="price">$1099.99</p>
+                                <h2 class="h3">Apple iPad Air</h2>
+                                <hr class="offset-sm">
+
+                                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
+                                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 product">
+                        <div class="body">
+                            <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+                            <a href="./"><img src="~/Assets/assets/img/products/asus-transformer.jpg" alt="Asus Transformer" /></a>
+
+                            <div class="content align-center">
+                                <p class="price">$987.99</p>
+                                <h2 class="h3">Asus Transformer</h2>
+                                <hr class="offset-sm">
+
+                                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
+                                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-4 product visible-sm">
+                        <div class="body">
+                            <a href="#favorites" class="favorites" data-favorite="inactive"><i class="ion-ios-heart-outline"></i></a>
+                            <a href="./"><img src="~/Assets/assets/img/products/ipad-mini.jpg" alt="iPad Mini" /></a>
+
+                            <div class="content align-center">
+                                <p class="price">$399.99</p>
+                                <h2 class="h3">iPad Mini</h2>
+                                <hr class="offset-sm">
+
+                                <button class="btn btn-link"> <i class="ion-android-open"></i> Details</button>
+                                <button class="btn btn-primary btn-sm rounded"> <i class="ion-bag"></i> Add to cart</button>
+                            </div>
+                        </div>
+                    </div>
+
+
+                </div>
+                <div class="align-right align-center-xs">
+                    <hr class="offset-sm">
+                    <a href="./store/"> <h5 class="upp">View all tablets </h5> </a>
+                </div>
+            </div>
+        </section>
+
+
+        <section class="blog">
+            <div class="container">
+                <h2 class="h2 upp align-center"> Blog Headlines </h2>
+                <hr class="offset-lg">
+
+                <div class="row">
+
+                    <div class="col-sm-6 col-md-6 item">
+
+                        <div class="body">
+                            <a href="#" class="view"><i class="ion-ios-book-outline"></i></a>
+                            <a href="#">
+                                <img src="~/Assets/assets/img/blog/img1.jpg" title="Apple Devices" alt="Apple Devices">
+                            </a>
+
+                            <div class="caption">
+                                <h2 class="h3">The next generation of Multi-Touch</h2>
+                                <label> 07.01.2017</label>
+                                <hr class="offset-sm">
+
+                                <p>
+                                    The original iPhone introduced the world to Multi-Touch, forever changing the way people experience technology. With 3D Touch, you can do things that were never possible before. It senses how deeply you press the display, letting you do all kinds of essential things more quickly and simply. And it gives you real-time feedback in the form of subtle taps from the all-new Taptic Engine.
+                                </p>
+                                <hr class="offset-sm">
+
+                                <a href="#"> View article </a>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-sm-6 col-md-6 item">
+
+                        <div class="body">
+                            <a href="#" class="view"><i class="ion-ios-book-outline"></i></a>
+                            <a href="#">
+                                <img src="~/Assets/assets/img/blog/img2.jpg" title="Coffee" alt="Coffee">
+                            </a>
+
+                            <div class="caption">
+                                <h2 class="h3">MacBook Pro - brand new day for business.</h2>
+                                <label> 02.01.2017</label>
+                                <hr class="offset-sm">
+
+                                <p>
+                                    Organizations everywhere are realizing the potential that Mac brings to their employees by giving them the freedom to use the tools they already know and love. Software and hardware made for each other. Because Apple designs both the software and hardware, every Mac delivers the best possible experience for employees.
+                                </p>
+                                <hr class="offset-sm">
+
+                                <a href="#"> View article <i class="ion-ios-arrow-right"></i> </a>
+                            </div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="align-right align-center-xs">
+                    <hr class="offset-sm">
+                    <a href="./blog/"> <h5 class="upp">View all articels </h5> </a>
+                </div>
+            </div>
+        </section>*@
+
+    @RenderBody()
+    <hr class="offset-lg">
+    <hr class="offset-sm">
+
+    @Html.Partial("_FooterPartial")
+
+    <script src="~/Assets/assets/jquery/jquery.min.js"></script>
+    <script src="~/Assets/assets/bootstrap/js/bootstrap.min.js"></script>
+    <script type="text/javascript" src="~/Assets/assets/js/core.js"></script>
+    <script type="text/javascript" src="~/Assets/assets/js/store.js"></script>
+    <script type="text/javascript" src="~/Assets/assets/js/carousel.js"></script>
+    <script src="~/Assets/assets/js/carousel-product.js"></script>
+
+    <script type="text/javascript" src="~/Assets/assets/js/jquery.touchSwipe.min.js"></script>
+    <script type="text/javascript" src="~/Assets/assets/js/custom-scroll/jquery.mCustomScrollbar.concat.min.js"></script>
+    <script type="text/javascript" src="~/Assets/assets/js/jquery-ui-1.11.4.js"></script>
+    <script type="text/javascript" src="~/Assets/assets/js/jquery.ui.touch-punch.js"></script>
+
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script>AOS.init();</script>
+    @RenderSection("Scripts", required: false)
+    <script>
+        $(document).ready(function () {
+            $("#suppportpage").click(function () {
+                window.location.href = "/support/index";
+            });
+            $("#imeicheck").click(function () {
+                window.location.href = "/Phonecheck/index";
+            });
+
+            console.log("dksmfkms");
+
+            $.ajax({
+                type: 'GET',
+                url: '/ajax/navbar',
+                dataType: 'json',
+                success: function (data) {
+                    pr = $("#productdrop");
+                    pr.append('<li><a href="/Product/Details?id=' + data.BasicProductId + '">Hidden Camera-Basic</a></li>');
+                    pr.append('<li><a href="/Product/Details?id=' + data.AdvanceProductId + '">Hidden Camera-Advance</a></li>');
+                    pr.append('<li><a href="/Product/Details?id=' + data.UltimateProductId + '">Hidden Camera-Ultimate</a></li>');
+
+                    nv = $("#mainNav");
+                    if (data.IsBlogEnabled) {
+                        nv.append('<li><a href="/Blog/Index"> Blog</a></li>');
+                    }
+
+                    footer = $("#footerLex");
+                    if (data.UseSmallFooter) {
+                        footer.append(`<div class="container">
+            <hr class="offset-md">
+
+            <div class="">
+                <div class="col-sm-12 col-md-12 text-center text-center-xs">
+                    <h3 class="text-simple">LEXPERT Tech LLC, Texas, USA</h3>
+                </div>
+                <div class="col-sm-12 col-md-12 text-center text-center-xs">
+                    <h3 class="text-simple">
+                        Copyright © 2020 LEXPERT Tech LLC. All rights reserved
+                        <a href="/Home/Privacy">Privacy</a>
+                        <a href="/Home/Contact">Contact us</a>
+                        <a href="/Warranty/Index">Subscribe</a>
+                    </h3>
+
+                </div>
+            </div>
+        </div>`);
+                    }
+                    else {
+                        footer.append(`<div class="container">
+            <hr class="offset-md">
+
+            <div class="" style="margin:0px 50px 0px 50px">
+                <div class="col-sm-12 col-md-12 text-center text-center-xs">
+                    <h3 class="text-simple">LEXPERT Tech LLC, Texas, USA</h3>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div style="padding-left:30px">
+                        <h1 class="h4 text-white">Information</h1>
+
+                        <div class="">
+                            <p><a href="/Home/Aboutus" class="text-simple">About</a></p>
+                            <p><a href="/Home/Privacy" class="text-simple">Privacy</a></p>
+                            <p><a href="/Home/Contact" class="text-simple">Contact</a></p>
+                            <p><a href="/Warranty/Index" class="text-simple">Subscribe</a></p>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div style="padding-left:30px">
+
+                        <h1 class="h4 text-white">Products</h1>
+
+                        <div id="footerPr">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-sm-4 col-md-4">
+                    <div style="padding-left:30px">
+
+                        <h1 class="h4 text-white">Navigate </h1>
+
+                        <div class="">
+                            <p><a href="/Home/Index" class="text-simple">Home</a></p>
+                            <p><a href="/Warranty/Index" class="text-simple">Warranty</a></p>
+                        </div>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12 col-md-12 align-center align-center-xs">
+                    <hr class="offset-sm">
+
+                    <h4 style="color:#e2d8d8">Copyright © 2020 LEXPERT Tech LLC. All rights reserved.</h4>
+                </div>
+            </div>
+        </div>`)
+                    }
+
+                    ft = $("#footerPr");
+                    ft.append('<p><a href="/Product/Details?id=' + data.BasicProductId + '" class="text-simple">Hidden camera - Basic</a></p>');
+                    ft.append('<p><a href="/Product/Details?id=' + data.AdvanceProductId + '" class="text-simple">Hidden camera - Advance</a></p>');
+                    ft.append('<p><a href="/Product/Details?id=' + data.UltimateProductId + '" class="text-simple">Hidden camera - Ultimate</a></p>');
+                }
+            });
+        });
+
+    </script>
+</body>
+</html>

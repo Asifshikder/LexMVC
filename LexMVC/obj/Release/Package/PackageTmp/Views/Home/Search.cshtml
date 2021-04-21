@@ -1,0 +1,38 @@
+﻿@model IEnumerable<LexMVC.Models.Product>
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<hr class="offset-lg">
+<hr class="offset-lg">
+<div class="">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 item">
+            <div class="text-center">
+                <div style="background-color:white">
+                    <h2 class="h3 black">Showing search results for @ViewBag.keyword</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<section class="blog">
+    <div class="container">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-12 col-md-12 col-xs-12" style="padding:10px">
+                    <div class="row" style=" background: white;">
+                        <a href="/Product/Details?id=@item.ProductId">@item.ProductName</a>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

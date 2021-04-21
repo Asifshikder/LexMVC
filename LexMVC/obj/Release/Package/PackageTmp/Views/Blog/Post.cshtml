@@ -1,0 +1,37 @@
+﻿@model LexMVC.Models.BlogPost
+@{
+    ViewData["Title"] = "Post";
+}
+
+<div class="blog-item">
+    <hr class="offset-lg visible-xs">
+    <hr class="offset-lg visible-xs">
+    <div class="row">
+        <div class="col-md-4">
+            <img src="@Url.Content(Model.BlogImage)" class="hidden-xs img-responsive"/>
+            <img src="@Url.Content(Model.BlogImage)" class="visible-xs img-responsive" />
+        </div>
+        <div class="col-md-6">
+            <hr class="offset-md">
+            <hr class="offset-lg visible-xs">
+            <hr class="offset-lg visible-xs">
+            <h1>@Model.BlogTitle</h1>
+            <p>@Model.PostTime.Value.ToLongDateString()</p>
+        </div>
+    </div>
+   
+    <div class="white">
+        <hr class="offset-md">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-12">
+                    <br>
+                        <p>@Html.Raw(Model.Content)</p>
+                </div>
+            </div>
+        </div>
+        <hr class="offset-lg">
+        <hr class="offset-lg">
+    </div>
+
+</div>

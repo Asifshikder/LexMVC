@@ -1,0 +1,174 @@
+﻿@model LexMVC.Models.Product
+@{
+    ViewData["Title"] = "Details";
+}
+
+<hr class="offset-sm">
+<hr class="offset-sm">
+
+@if (Model != null)
+{
+    <div class="breadcrumb">
+        <p>@Model.ProductName</p>
+    </div>
+    <section class="product">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4 col-md-4 white no-padding">
+                    <div class="carousel-product" data-count="3" data-current="1">
+
+                        <div class="items">
+                            <button class="btn btn-control" data-direction="right"> <i class="ion-ios-arrow-right"></i></button>
+                            <button class="btn btn-control" data-direction="left"> <i class="ion-ios-arrow-left"></i></button>
+
+
+                            <div class="item center" data-marker="1">
+                                @if (Model.ProfileImage != null)
+                                {
+                                    <img src="@Url.Content(Model.ProfileImage)" alt="" class="background" />
+
+                                }
+                                else
+                                {
+                                    <img src="#" alt="" class="background" />
+
+                                }
+                            </div>
+
+                            <div class="item" data-marker="2">
+                                @if (Model.ProfileImage1 != null)
+                                {
+                                    <img src="@Url.Content(Model.ProfileImage1)" alt="" class="background" />
+
+                                }
+                                else
+                                {
+                                    <img src="#" alt="" class="background" />
+
+                                }
+                            </div>
+
+                            <div class="item" data-marker="3">
+                                @if (Model.ProfileImage2 != null)
+                                {
+                                    <img src="@Url.Content(Model.ProfileImage2)" alt="" class="background" />
+
+                                }
+                                else
+                                {
+                                    <img src="#" alt="" class="background" />
+
+                                }
+                            </div>
+
+
+                        </div>
+
+                        <ul class="markers">
+                            <li data-marker="1" class="active"></li>
+                            <li data-marker="2"></li>
+                            <li data-marker="3"></li>
+                        </ul>
+
+                    </div>
+                    <br />
+                    <div>
+                        <a href="@Html.Raw(Model.Amazonlink)" class="btn btn-primary btn-block black"><i class="fa fa-amazon"></i>Buy on amazon</a>
+                    </div>
+                </div>
+                <div class="col-sm-8 col-md-8 no-padding-xs">
+                    <div class="caption">
+
+                        <h1 class="h2">@Model.ProductName</h1>
+                        <hr class="offset-sm">
+                        <h2 class="h4">@Model.ShortDescription</h2>
+                        <hr class="offset-sm">
+
+                        @if (Model.Description != null)
+                        {
+                            <p>@Html.Raw(Model.OtherDescription)</p>
+                        }
+                        <hr class="offset-md">
+
+                    </div>
+                </div>
+            </div>
+            <hr class="offset-sm hidden-xs">
+
+            <div class="row">
+                <div class="col-sm-12 white sm-padding text-center" >
+                    <hr class="offset-sm visible-xs">
+
+                    <h2 class="h4">@Model.VideoName</h2>
+                    <br>
+
+                    <p>
+                        @Html.Raw(Model.VideoUrl)
+                    </p>
+                    <br>
+
+                    <hr class="offset-lg">
+                </div>
+
+            </div>
+            <div class="row">
+                <div class="col-sm-12 white sm-padding">
+                    <hr class="offset-sm visible-xs">
+
+                    <h2 class="h3">Short Description:</h2>
+                    <br>
+
+                    <p>
+                        @Model.CartDescription)
+                    </p>
+                    <br>
+
+                    <h2>Details:</h2>
+                    <br>
+
+                    <p>
+                        @Html.Raw(Model.Description)
+                    </p>
+                    <hr class="offset-lg">
+                </div>
+
+            </div>
+            <hr class="offset-lg">
+            <div class="row">
+                @if (Model.FeatureImage1 != null)
+                {
+                    <div class="col-sm-12 white sm-padding">
+                        <img src="@Url.Content(Model.FeatureImage1)" class="img-responsive" />
+                    </div>
+                }
+
+                @if (Model.FeatureImage2 != null)
+                {
+                    <div class="col-sm-12 white sm-padding">
+                        <img src="@Url.Content(Model.FeatureImage2)" class="img-responsive" />
+                    </div>
+                }
+                @if (Model.FeatureImage3 != null)
+                {
+                    <div class="col-sm-12 white sm-padding">
+                        <img src="@Url.Content(Model.FeatureImage3)" class="img-responsive" />
+                    </div>
+                }
+                @if (Model.FeatureImage4 != null)
+                {
+                    <div class="col-sm-12 white sm-padding">
+                        <img src="@Url.Content(Model.FeatureImage4)" class="img-responsive" />
+                    </div>
+                }
+
+                @if (Model.FeatureImage5 != null)
+                {
+                    <div class="col-sm-12 white sm-padding">
+                        <img src="@Url.Content(Model.FeatureImage5)" class="img-responsive" />
+                    </div>
+                }
+            </div>
+        </div>
+    </section>}
+<hr class="offset-lg">
+

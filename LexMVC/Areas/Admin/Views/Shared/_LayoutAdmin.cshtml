@@ -1,0 +1,183 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <title>Admin - LexMVC LLC</title>
+    <link href="~/Assets/AdminContents/vendor/bootstrap/css/bootstrap.min.css" rel="stylesheet">
+    <link href="~/Assets/AdminContents/vendor/font-awesome/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+    <link href="~/Assets/AdminContents/vendor/datatables/dataTables.bootstrap4.css" rel="stylesheet">
+    <link rel="stylesheet" href="~/Assets/AdminContents/vendor/summernote/summernote-bs4.css">
+
+    <link href="~/Assets/AdminContents/css/sb-admin.css" rel="stylesheet">
+    <link href="~/Assets/AdminContents/vendor/Dropify/css/dropify.min.css" rel="stylesheet">
+</head>
+
+<body class="fixed-nav sticky-footer bg-dark" id="page-top">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top" id="mainNav">
+        <a class="navbar-brand" href="/Home/Index">LEXPERT</a>
+        <button class="navbar-toggler navbar-toggler-right" type="button" data-toggle="collapse" data-target="#navbarResponsive" aria-controls="navbarResponsive" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarResponsive">
+            <ul class="navbar-nav navbar-sidenav" id="exampleAccordion">
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Dashboard">
+                    <a class="nav-link" href="/Admin/Home/Index">
+                        <i class="fa fa-fw fa-dashboard"></i>
+                        <span class="nav-link-text">Dashboard</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Tables">
+                    <a class="nav-link" href="/Admin/Warranty/Index">
+                        <i class="fa fa-fw fa-table"></i>
+                        <span class="nav-link-text">Warranty</span>
+                    </a>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Pages">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseComponents" data-parent="#exampleAccordion">
+                    
+                        <i class="fa fa-fw fa-file"></i>
+                        <span class="nav-link-text">Pages</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseComponents">
+                        <li>
+                            <a href="/Admin/Aboutus/Index">About us</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Privacy/Index">Privacy</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Contact/Index">Contact</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplesPages" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-bar-chart-o"></i>
+                        <span class="nav-link-text">Product</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseExamplesPages">
+                        <li>
+                            <a href="/Admin/Product/Index">All product</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Product/Create">Create new</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapsExamplePages" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-paragraph"></i>
+                        <span class="nav-link-text">Blog</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapsExamplePages">
+                        
+                        <li>
+                            <a href="/Admin/Blog/Index">Index</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/Blog/Create">New post</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExamplePages" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-wrench"></i>
+                        <span class="nav-link-text">Settings</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseExamplePages">
+                        
+                        <li>
+                            <a href="/Admin/EmailSetting/Index">Email Setting</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/EmailTemplate/Index">Email Template</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/SiteSetting/Index">Site Configuration</a>
+                        </li>
+                        <li>
+                            <a href="/Admin/NavLink/Index">Navbar product</a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="nav-item" data-toggle="tooltip" data-placement="right" title="Example Pages">
+                    <a class="nav-link nav-link-collapse collapsed" data-toggle="collapse" href="#collapseExampleManage" data-parent="#exampleAccordion">
+                        <i class="fa fa-fw fa-anchor"></i>
+                        <span class="nav-link-text">Manage</span>
+                    </a>
+                    <ul class="sidenav-second-level collapse" id="collapseExampleManage">
+                        
+                        <li>
+                            <a href="/Manage/ChangePassword">Change password</a>
+                        </li>
+                       
+                    </ul>
+                </li>
+            </ul>
+            <ul class="navbar-nav sidenav-toggler">
+                <li class="nav-item">
+                    <a class="nav-link text-center" id="sidenavToggler">
+                        <i class="fa fa-fw fa-angle-left"></i>
+                    </a>
+                </li>
+            </ul>
+            <ul class="navbar-nav ml-auto">
+               
+                <li class="nav-item">
+                    <form asp-area="" asp-controller="Account" asp-action="Logout" method="post">
+                      <button type="submit" class="btn btn-primary"><i class="fa fa-fw fa-sign-out"></i>Logout</button>
+                    </form>
+                </li>
+            </ul>
+        </div>
+    </nav>
+    <div class="content-wrapper">
+        @RenderBody();
+        <footer class="sticky-footer">
+            <div class="container">
+                <div class="text-center">
+                    <small>Copyright © LEXPERT LLC</small>
+                </div>
+            </div>
+        </footer>
+        <a class="scroll-to-top rounded" href="#page-top">
+            <i class="fa fa-angle-up"></i>
+        </a>
+        <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Ready to Leave?</h5>
+                        <button class="close" type="button" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">×</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">Select "Logout" below if you are ready to end your current session.</div>
+                    <div class="modal-footer">
+                        <button class="btn btn-secondary" type="button" data-dismiss="modal">Cancel</button>
+                        <a class="btn btn-primary" href="login.html">Logout</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <script src="~/Assets/assets/jquery/jquery.min.js"></script>
+
+        @*<script src="~/Assets/AdminContents/~/Assets/AdminContents/vendor/jquery/jquery.min.js"></script>*@
+        <script src="~/Assets/AdminContents/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
+        <script src="~/Assets/AdminContents/vendor/jquery-easing/jquery.easing.min.js"></script>
+        <script src="~/Assets/AdminContents/vendor/datatables/jquery.dataTables.js"></script>
+        <script src="~/Assets/AdminContents/vendor/datatables/dataTables.bootstrap4.js"></script>
+        <script src="~/Assets/AdminContents/vendor/summernote/summernote-bs4.min.js"></script>
+        <script src="~/Assets/AdminContents/vendor/Dropify/js/dropify.min.js"></script>
+
+        @RenderSection("Scripts", required: false)
+
+    </div>
+</body>
+
+</html>

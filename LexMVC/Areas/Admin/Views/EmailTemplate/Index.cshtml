@@ -1,0 +1,93 @@
+﻿@model LexMVC.Models.MailBodyContent
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/EmailTemplate/Index">EmailTemplate</a>
+        </li>
+        <li class="breadcrumb-item active">Index</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> EmailTemplate
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a class="btn btn-outline-success" href="/Admin/EmailTemplate/Edit?id=@Model.Id"><i class="fa fa-edit"></i>Edit</a>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Gretting lines:</p>
+                        <p>@Html.Raw(Model.GreetingHeader)</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Mail body lines:</p>
+                        <p>@Html.Raw(Model.MiddleContent)</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Regards lines:</p>
+                        <p>@Html.Raw(Model.FooterContent)</p>
+                    </div>
+                </div>
+                <div class="row">
+
+                    <div class="col-md-12 text-center">
+                        <p class="text-success">Preview</p>
+                    </div>
+                    <hr />
+                    <div class="col-md-12">
+                        <p>Dear xxx,</p>
+                        <br />
+                        <p>@Html.Raw(Model.GreetingHeader)</p>
+                        <p>
+                            <b>Product ordered: Hidden Camera Charger</b>
+                            <br />
+                            <img src="~/Assets/assets/Amazon choice badge.png" height="90" />
+                        </p> 
+                        <p class="text-danger">
+                            <b>https://www.amazon.com/gp/your-account/order-history</b>
+                        </p>
+                        <p>
+                            @Html.Raw(Model.MiddleContent)
+                        </p>
+                        <p>
+                            @Html.Raw(Model.FooterContent)
+                        </p>
+                    </div>
+                    <hr />
+                    <br />
+                    <div class="col-md-12 text-center">
+                        <p class="text-success">This will send to the user:(You have to attach images to the body from the edit or create page)</p>
+                    </div>
+                    <div class="col-md-12" style="background-color:antiquewhite">
+                        <p>Dear xxx,</p>
+                        <br />
+                        <p>@Html.Raw(Model.GreetingHeader)</p>
+                        <p>
+                            @Html.Raw(Model.MiddleContent)
+                        </p>
+                        <p>
+                            @Html.Raw(Model.FooterContent)
+                        </p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+
+                    <div class="col-md-12 text-center">
+                        <a href="/Admin/EmailTemplate/Create" class="btn btn-outline-primary"><i class="fa fa-plus"></i>Create</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

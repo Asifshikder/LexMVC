@@ -1,0 +1,90 @@
+﻿@model LexMVC.Models.Warranty
+@{
+    ViewData["Title"] = "Index";
+}
+<hr class="offset-lg">
+<hr class="offset-lg">
+<div class="">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12">
+            <div class="text-center">
+                <div style="background-color:white">
+                    <h2 class="h3 black">Warranty</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<section class="blog">
+    <div class="container">
+        @if (!String.IsNullOrEmpty(ViewBag.Message))
+        {
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h2 class="h3 black">
+                        Your Purchase
+                    </h2>
+                    <hr />
+                </div>
+                <div class="col-md-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-sm-12 col-xs-12 breadcrumb">
+                    <h2 class="h3 black">
+                        CONGRATS!!! You've won 18 months extended warranty!
+                    </h2>
+                    <p class="text-success">Submission successful! </p>
+                    <p class="">Thank you for purchase and registering your purchase. Please keep this confirmation to receive 18 months extended warranty from Lexpert Tech LLC.  </p>
+                    <p class="">Regards</p>
+                    <p class="">Lexpert Tech LLC</p>
+                    <hr />
+                </div>
+            </div>
+        }
+        else
+        {
+            <div class="row">
+                <div class="col-md-12 col-sm-12 col-xs-12 text-center">
+                    <h2 class="h3 black">
+                        CONGRATS!!! You've won 18 months extended warranty!
+                        Claim It Now.
+                    </h2>
+                    <hr />
+                </div>
+                <div class="col-md-8 col-sm-offset-2 col-md-offset-2 col-xs-offset-2 col-sm-8 col-xs-8 breadcrumb">
+                    @using (Html.BeginForm("Index", "Warranty", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                    {
+                        <div class="form-group">
+                            <label class="control-label">Your Name</label>
+                            <input class="form-control" name="FullName" id="FullName" required placeholder="Your answer" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Your Email</label>
+                            <input class="form-control" name="Email"  id="Email" required placeholder="Your answer" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">Order # (e.g. 114-1721873-1234567)</label>
+                            <input class="form-control" name="OrderCode" id="OrderCode" required placeholder="Your answer" />
+                        </div>
+                        <div class="form-group">
+                            <label class="control-label">
+                                Do like your purchase? <input class="" checked="checked"
+                                                              id="IsLikePurchase"
+                                                              name="IsLikePurchase"
+                                                              type="checkbox"
+                                                              value="true" />
+                            </label>
+                        </div>
+                        <div class="form-group">
+                            <input type="submit" class="btn btn-primary black" value="Submit" />
+                        </div>
+                    }
+
+                </div>
+            </div>
+        }
+
+
+    </div>
+</section>
+

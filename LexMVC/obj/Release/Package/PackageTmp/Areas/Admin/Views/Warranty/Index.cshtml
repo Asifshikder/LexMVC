@@ -1,0 +1,67 @@
+﻿@model IEnumerable<LexMVC.Models.Warranty>
+@{
+    ViewData["Title"] = "Index";
+}
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Warranty/Index">Warranty</a>
+        </li>
+        <li class="breadcrumb-item active">Index</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> Warranty
+        </div>
+        <div class="card-body">
+            <div class="table-responsive">
+                <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Name</th>
+                            <th>Email</th>
+                            <th>Order</th>
+                            <th>Date</th>
+                            <th>Is liked?</th>
+                            <th>Action</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                            <tr>
+                                <td>
+                                    @item.WarrantyId
+                                </td>
+                                <td>
+                                    @item.FullName
+                                </td>
+                                <td>
+                                    @item.Email
+                                </td>
+                                <td>
+                                    @item.OrderCode
+                                </td>
+                                <td>
+                                    @item.AvailDate.Value.ToLongDateString()
+                                </td>
+                                <td>
+                                    @if (item.IsLikePurchase == true)
+                                    {<p>"yes"</p> }
+                                    else { <p>"No"</p>}
+
+                                </td>
+                                <td>
+                                    <a href="/admin/warranty/Delete?id=@item.WarrantyId">Delete</a>
+                                </td>
+                               
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+        </div>
+    </div>
+</div>

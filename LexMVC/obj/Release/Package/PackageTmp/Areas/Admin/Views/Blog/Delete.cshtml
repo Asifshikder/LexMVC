@@ -1,0 +1,46 @@
+﻿@model LexMVC.Models.BlogPost
+@{
+    ViewData["Title"] = "Delete";
+}
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Blog/Index">Blog</a>
+        </li>
+        <li class="breadcrumb-item active">Create</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i>Blog
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm("DeleteConfirm", "Blog", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.BlogId)
+                    @Html.HiddenFor(s => s.BlogImage)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Title</label>
+                                @Html.TextAreaFor(model => model.BlogTitle, new { @class = "form-control", @disabled = "true" })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Content</label>
+                                @Html.TextAreaFor(model => model.Content, new { @class = "form-control", @disabled = "true" })
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="btn btn-block btn-danger" type="submit">Delete</button>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>

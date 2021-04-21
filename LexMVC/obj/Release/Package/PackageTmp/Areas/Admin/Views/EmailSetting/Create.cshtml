@@ -1,0 +1,56 @@
+﻿@model LexMVC.Models.EmailSetting
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/EmailSetting/Index">EmailSetting</a>
+        </li>
+        <li class="breadcrumb-item active">Create</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> EmailSetting
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Create", "EmailSetting", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="form-group">
+                        <label class="control-label">Sender Email</label>
+                        <input name="SenderEmail" id="SenderEmail" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Host Name</label>
+                        <input name="HostName" id="HostName" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Port Number</label>
+                        <input name="PortName" id="PortName" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Display Name</label>
+                        <input name="DisplayName" id="DisplayName" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Username</label>
+                        <input name="Username" id="Username" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        <input name="Password" id="Password" class="form-control" required />
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Save</button>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

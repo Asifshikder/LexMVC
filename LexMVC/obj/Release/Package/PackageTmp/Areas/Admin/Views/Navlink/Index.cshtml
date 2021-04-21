@@ -1,0 +1,51 @@
+﻿@model LexMVC.Areas.Admin.Controllers.NavlinkVM
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Navlink/Index">NavlinkSetup</a>
+        </li>
+        <li class="breadcrumb-item active">Index</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> Set product link for the navbar
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a class="btn btn-outline-success" href="/Admin/Navlink/Edit?id=@Model.Id"><i class="fa fa-edit"></i>Edit</a>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Basic product</p>
+                        <p>@Model.BasicName</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Advance product</p>
+                        <p>@Model.AdvanceName</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Ultimate product</p>
+                        <p>@Model.UltimateName</p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+
+                    <div class="col-md-12 text-center">
+                        <a href="/Admin/Navlink/Create" class="btn btn-outline-primary"><i class="fa fa-plus"></i>Create</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

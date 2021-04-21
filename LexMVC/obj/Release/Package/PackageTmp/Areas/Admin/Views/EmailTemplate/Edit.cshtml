@@ -1,0 +1,57 @@
+﻿@model LexMVC.Models.MailBodyContent
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/EmailTemplate/Index">EmailTemplate</a>
+        </li>
+        <li class="breadcrumb-item active">Update</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> EmailTemplate
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                @using (Html.BeginForm("Update", "EmailTemplate", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.Id)
+                    <div class="form-group">
+                        <label class="control-label">Gretting lines</label>
+                        @Html.TextAreaFor(model => model.GreetingHeader, new { @class = "form-control summernote" })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Body lines</label>
+                        @Html.TextAreaFor(model => model.MiddleContent, new { @class = "form-control summernote" })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Regards lines</label>
+                        @Html.TextAreaFor(model => model.FooterContent, new { @class = "form-control summernote" })
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.dropify').dropify();
+            $('.summernote').summernote({
+                tabsize: 2,
+                height: 200
+            });
+        });
+
+    </script>
+}

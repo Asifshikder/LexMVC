@@ -1,0 +1,45 @@
+﻿@model LexMVC.Models.NavlinkSetup
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Navlink/Index">NavlinkSetup</a>
+        </li>
+        <li class="breadcrumb-item active">Update</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> About
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Update", "Navlink", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.SetupId)
+                    <div class="form-group">
+                        <label class="control-label">Basic navbar link</label>
+                        @Html.DropDownListFor(s => s.BasicProductId, (IEnumerable<SelectListItem>)ViewBag.products, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Advance navbar link</label>
+                        @Html.DropDownListFor(s => s.AdvanceProductId, (IEnumerable<SelectListItem>)ViewBag.products, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Ultimate navbar link</label>
+                        @Html.DropDownListFor(s => s.UltimateProductId, (IEnumerable<SelectListItem>)ViewBag.products, new { @class = "form-control" })
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>

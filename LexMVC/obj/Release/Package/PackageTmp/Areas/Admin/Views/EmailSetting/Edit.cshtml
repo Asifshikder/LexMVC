@@ -1,0 +1,68 @@
+﻿@model LexMVC.Models.EmailSetting
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/EmailSetting/Index">EmailSetting</a>
+        </li>
+        <li class="breadcrumb-item active">Update</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> EmailSetting
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+                @using (Html.BeginForm("Update", "EmailSetting", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.EmailSettingsId)
+                    <div class="form-group">
+                        <label class="control-label">Sender Email</label>
+                        @Html.EditorFor(model => model.SenderEmail, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Host Name</label>
+                        @Html.EditorFor(model => model.HostName, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Port Number</label>
+                        @Html.EditorFor(model => model.PortName, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Display Name</label>
+                        @Html.EditorFor(model => model.DisplayName, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Username</label>
+                        @Html.EditorFor(model => model.Username, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Password</label>
+                        @Html.EditorFor(model => model.Password, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.dropify').dropify();
+            $('.summernote').summernote({
+                tabsize: 2,
+                height: 500
+            });
+        });
+
+    </script>
+}

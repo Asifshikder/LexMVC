@@ -1,0 +1,70 @@
+﻿@model IEnumerable<LexMVC.Models.Product>
+@{
+    ViewData["Title"] = "Search";
+}
+
+
+<hr class="offset-lg">
+<hr class="offset-lg">
+<div class="">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 item">
+            <div class="text-center">
+                <div style="background-color:white">
+                    <h2 class="h3 black">Products</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<section class="blog">
+    <div class="container">
+
+        <div class="row">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-12 col-md-12 col-xs-12" style="padding:10px">
+                    <div class="row" style=" background: white;">
+                        <div class="col-md-4">
+                            <div class="" style="padding:10px">
+                                <img src="@Url.Content(item.ProfileImage)" height="300" />
+                            </div>
+                            <div style="padding-bottom:10px;">
+                                <a href="/Product/Details?id=@item.ProductId" class="btn btn-block btn-primary black">
+                                    Lean more
+                                </a>
+                            </div>
+                            <div>
+
+                                <a href="@Html.Raw(item.Amazonlink)">
+                                    <button class="btn btn-block btn-primary black">
+                                        Buy on amazon
+                                    </button>
+                                    <div class="text-center">
+                                        <img src="~/StaticImages/available_at_amazon_1200x600_Nvz5h2M.png" height="50" />
+                                    </div>
+                                </a>
+                            </div>
+                        </div>
+                        <div class="col-md-8">
+                            <div>
+                                <h2 class="h2 black">@item.ProductName</h2>
+                            </div>
+                            <div>
+                                <h3 class="h4 black">@item.ShortDescription</h3>
+                            </div>
+                            <div>
+                                <p>@Html.Raw(item.Description)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>
+

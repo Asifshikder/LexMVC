@@ -1,0 +1,40 @@
+﻿@model LexMVC.Models.Privacy
+@{
+    ViewData["Title"] = "Privacy Policy";
+}
+
+<hr class="offset-lg">
+<hr class="offset-lg">
+<div class="">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 item">
+            <div class="text-center">
+                <div style="background-color:white">
+                    <h2 class="h3 black">Privacy and policy</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<section class="blog">
+    <div class="container">
+
+        <div class="row">
+
+            <div class="col-md-12" style=" background: white; min-height: 273px;">
+                @if (Model == null)
+                {
+                    <p>Please set privacy from admin panel</p>
+                }
+                else
+                {
+                    <p>@Html.Raw(Model.Content)</p>
+                }
+            </div>
+        </div>
+
+    </div>
+</section>

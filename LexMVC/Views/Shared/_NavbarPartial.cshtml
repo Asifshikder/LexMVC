@@ -1,0 +1,58 @@
+﻿<nav class="navbar navbar-default" style="position:fixed;">
+    <div class="container">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                <span class="sr-only">Toggle navigation</span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="./">
+                <img src="~/Assets/assets/img/headlogo.png" height="30" />
+            </a>
+            <p class="navbar-brands hidden-xs hidden-sm">
+                LEXPERT LLC
+            </p>
+            <a class="navbar-brand pull-right hidden-sm hidden-md hidden-lg" href="#open-cart" style="padding-top: 15px;"> <i class="ion-ios-search"></i>  </a>
+        </div>
+
+        <div id="navbar" class="navbar-collapse collapse">
+            <ul class="nav navbar-nav">
+            </ul>
+            <ul id="mainNav" class="nav navbar-nav navbar-right">
+                <li><a href="/Home/Index">Home</a></li>
+                <li class="dropdown">
+                    <a href="/Product/Index" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-haspopup="true" aria-expanded="false">
+                        Product <i class="ion-android-arrow-dropdown"></i>
+                    </a>
+
+                    <ul id="productdrop" class="dropdown-menu">
+                        <li><a href="/Product/Index">All Products</a></li>
+                    </ul>
+                </li>
+                <li><a href="/Warranty/Index">Warranty</a></li>
+                <li><a href="/Home/Contact">Contact us</a></li>
+                <li><a href="/Home/Aboutus">About us</a></li>
+                @*@if (Model != null)
+                    {if (Model.IsBlogEnabled == true)
+                        {
+                            <li><a href="/Blog/Index"> Blog</a></li>
+                        }}*@
+
+
+            </ul>
+        </div><!--/.nav-collapse -->
+
+        <form asp-controller="Home" asp-action="Search" method="get">
+
+            <div class="search hidden-xs" data-style="hidden">
+                <div class="input">
+                    <button type="button"><i class="ion-ios-search"></i></button>
+
+                    <input type="text" id="search" name="search" value="" placeholder="Type and press enter" />
+                </div>
+            </div>
+        </form>
+
+    </div><!--/.container-fluid -->
+</nav>

@@ -1,0 +1,50 @@
+﻿@model LexMVC.Models.AboutUs
+@{
+    ViewData["Title"] = "Index";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Aboutus/Index">About us</a>
+        </li>
+        <li class="breadcrumb-item active">Index</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> About us
+        </div>
+        <div class="card-body">
+            @if (Model != null)
+            {
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a class="btn btn-outline-success" href="/Admin/Aboutus/Edit?id=@Model.AboutUsId"><i class="fa fa-edit"></i>Edit</a>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Title</p>
+                        <p>@Html.DisplayFor(model => model.Title)</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Details</p>
+                        <p>@Html.Raw(Model.Details)</p>
+                    </div>
+                    <div class="col-md-12">
+                        <p class="text-warning">Image</p>
+                        <p><img src="@Url.Content(Model.ImageUrl)" height="100" /></p>
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="row">
+                    <div class="col-md-12 text-center">
+                        <a href="/Admin/Aboutus/Create" class="btn btn-outline-primary"><i class="fa fa-plus"></i>Create</a>
+                    </div>
+                </div>
+            }
+
+        </div>
+    </div>
+</div>

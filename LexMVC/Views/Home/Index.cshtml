@@ -1,0 +1,350 @@
+﻿@model IEnumerable<LexMVC.Models.Product>
+@{
+    ViewData["Title"] = "Home Page";
+}
+
+
+<header>
+    <div class="carousel carousel-height" data-count="1" data-current="1" @*style="height:600px"*@>
+
+        <div class="items">
+
+            <div class="item center" data-marker="1">
+                <img src="~/Assets/assets/img/AdobeStock_216241731-small size.jpg" alt="Background" class="background hidden-xs hidden-sm" style="margin-top:-100px" />
+                <img src="~/Assets/assets/img/AdobeStock_216241731-small size.jpg" alt="Background" class="background visible-sm" />
+                <img src="~/Assets/assets/img/AdobeStock_216241731-small size.jpg" alt="Background" class="background visible-xs" />
+
+                <div class="content">
+                    <div class="outside-content">
+                        <div class="inside-content">
+                            <div class="container align-left">
+                                <h1 class="h3 black hero-text"><b>LexMVC</b></h1>
+                                <h1 class="h3 black" style="text-shadow:2px 2px 0px #e2d8d8"><i><b>Bring Exciting Innovations to you with Lower Cost</b></i></h1>
+
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+
+        <ul class="markers" hidden>
+            <li data-marker="1" data-style="white" class="active"></li>
+        </ul>
+
+    </div>
+</header>
+<hr class="offset-lg">
+<section class="blog">
+    <div class="container">
+        @*<h2 class="h2 upp align-center"> Blog Headlines </h2>
+            <hr class="offset-lg">*@
+
+        <div class="row">
+
+            <div class="col-sm-6 col-md-6 item">
+                <div class="text-center"><h3>Introducing Latest Innovations from Our Brand</h3></div>
+                <div class="text-center">
+                    <div class="hidden-xs hidden-sm">
+
+                        <iframe width="536" height="316" src="https://www.youtube.com/embed/_wMEfb6SrMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
+                    <div class="visible-sm">
+
+                        <iframe width="400" height="300" src="https://www.youtube.com/embed/_wMEfb6SrMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
+                    <div class="visible-xs">
+
+                        <iframe width="300" height="300" src="https://www.youtube.com/embed/_wMEfb6SrMY" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" allowfullscreen></iframe>
+
+                    </div>
+                </div>
+            </div>
+            @*<div class="col-sm-6 col-md-6 no-padding">
+                    <div class="carousel-product" data-count="4" data-current="1">
+
+                        <div class="items">
+                            <button class="btn btn-control" data-direction="right"> <i class="ion-ios-arrow-right"></i></button>
+                            <button class="btn btn-control" data-direction="left"> <i class="ion-ios-arrow-left"></i></button>
+
+
+                            <div class="item center" data-marker="1">
+                                <img src="~/Assets/assets/img/product/1.jpg" alt="Microsoft Surface Studio" class="background" />
+                            </div>
+
+                            <div class="item" data-marker="2">
+                                <img src="~/Assets/assets/img/product/2.jpg" alt="Microsoft Surface Studio" class="background" />
+                            </div>
+
+                            <div class="item" data-marker="3">
+                                <img src="~/Assets/assets/img/product/3.jpg" alt="Microsoft Surface Studio" class="background" />
+                            </div>
+
+                            <div class="item" data-marker="4">
+                                <img src="~/Assets/assets/img/product/video.jpg" alt="Microsoft Surface Studio" class="background" />
+
+                                <div class="tiles">
+                                    <a href="#video" data-gallery="#video" data-source="youtube" data-id="BzMLA8YIgG0">
+                                        <img src="~/Assets/assets/img/product/video.jpg" alt="Surface Studio">
+
+                                        <div class="overlay"></div>
+                                        <div class="content">
+                                            <div class="content-outside">
+                                                <div class="content-inside">
+                                                    <i class="ion-ios-play"></i>
+                                                    <h2 class="white hidden-xs">Introducing Microsoft <br> Surface Studio</h2>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </a>
+                                </div>
+                            </div>
+                        </div>
+
+                        <ul class="markers">
+                            <li data-marker="1" class="active"></li>
+                            <li data-marker="2"></li>
+                            <li data-marker="3"></li>
+                            <li data-marker="4"></li>
+                        </ul>
+
+                    </div>
+                </div>*@
+            <div class="col-sm-6 col-md-6 item">
+                <div class="text-center"><h3>Tens of Thousands Customers Have Trusted our Products</h3></div>
+                <div class="body">
+                    <div class="carousel" data-count="5" data-current="1">
+
+                        <div class="items">
+                            <button class="btn btn-control" data-direction="right"> <i class="ion-ios-arrow-right"></i></button>
+                            <button class="btn btn-control" data-direction="left"> <i class="ion-ios-arrow-left"></i></button>
+
+
+                            <div class="item center" data-marker="1">
+                                <img src="~/Assets/assets/img/carousel/bckg.jpg" alt="Background" class="background hidden-xs hidden-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-xs" />
+
+                                <!-- <img src="assets/img/carousel/ipadair2.jpg" alt="Apple Devices" title="Apple Devices" class="item-right hidden-xs"/> -->
+
+                                <div class="content">
+                                    <div style="padding:15px">
+                                        <div class="align-left">
+                                            <span style="color:red">★★★★★</span>
+                                            <h3>
+                                                "Great quality with great price. Premium package and product design. Highly recommended!"
+                                            </h3>
+
+                                            <hr class="offset-sm">
+                                            <p>
+                                                "... I was very impressed with how it is designed, both the package and the product with clear instruction of how to use it"
+                                            </p>
+                                            <p>
+                                                -P. T.
+                                            </p>
+                                            <hr class="offset-md">
+                                            <hr class="offset-md">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item" data-marker="2">
+                                <img src="~/Assets/assets/img/carousel/bckg.jpg" alt="Background" class="background hidden-xs hidden-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-xs" />
+
+                                <!-- <img src="assets/img/carousel/ipadair2.jpg" alt="Apple Devices" title="Apple Devices" class="item-right hidden-xs"/> -->
+
+                                <div class="content">
+                                    <div style="padding:15px">
+                                        <div class="align-left">
+                                            <span style="color:red">★★★★★</span>
+                                            <h3>
+                                                "Good product with very good price. Motion detection is good. High quality!"
+                                            </h3>
+
+                                            <hr class="offset-sm">
+                                            <p>
+                                                "...I am using this to keep tabs on family members and my personal valuables. The picture quality is great, it's a handy little device that's very useful"
+                                            </p>
+                                            <p>
+                                                -Amazon Customer
+                                            </p>
+                                            <hr class="offset-md">
+                                            <hr class="offset-md">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item" data-marker="3">
+                                <img src="~/Assets/assets/img/carousel/bckg.jpg" alt="Background" class="background hidden-xs hidden-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-xs" />
+
+                                <!-- <img src="assets/img/carousel/ipadair2.jpg" alt="Apple Devices" title="Apple Devices" class="item-right hidden-xs"/> -->
+
+                                <div class="content">
+                                    <div style="padding:15px">
+                                        <div class="align-left">
+                                            <span style="color:red">★★★★★</span>
+                                            <h3>
+                                                "Good design, thoughtfully made. Easy to use and it WORKS!!! Love it!"
+                                            </h3>
+
+                                            <hr class="offset-sm">
+                                            <p>
+                                                "...The nice thing about it is I can record in different location and angle using my power bank. It's really mobile and convenient."
+                                            </p>
+                                            <p>
+                                                -Amazon Customer
+                                            </p>
+                                            <hr class="offset-md">
+                                            <hr class="offset-md">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <div class="item" data-marker="4">
+                                <img src="~/Assets/assets/img/carousel/bckg.jpg" alt="Background" class="background hidden-xs hidden-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-xs" />
+
+                                <!-- <img src="assets/img/carousel/ipadair2.jpg" alt="Apple Devices" title="Apple Devices" class="item-right hidden-xs"/> -->
+
+                                <div class="content">
+                                    <div style="padding:15px">
+                                        <div class="align-left">
+                                            <span style="color:red">★★★★★</span>
+                                            <h3>
+                                                "Good and decent for its use!"
+                                            </h3>
+
+                                            <hr class="offset-sm">
+                                            <p>
+                                                "...Easy to use, just plug it in and its on and recording! Good for recording anywhere!"
+                                            </p>
+                                            <p>
+                                                -Amazon Customer
+                                            </p>
+                                            <hr class="offset-md">
+                                            <hr class="offset-md">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="item" data-marker="5">
+                                <img src="~/Assets/assets/img/carousel/bckg.jpg" alt="Background" class="background hidden-xs hidden-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-sm" />
+                                <img src="~/Assets/assets/img/carousel/bckg-sm.jpg" alt="Background" class="background visible-xs" />
+
+                                <!-- <img src="assets/img/carousel/ipadair2.jpg" alt="Apple Devices" title="Apple Devices" class="item-right hidden-xs"/> -->
+
+                                <div class="content">
+                                    <div style="padding:15px">
+                                        <div class="align-left">
+                                            <span style="color:red">★★★★★</span>
+                                            <h3>
+                                                "Great product; small size and good price"
+                                            </h3>
+
+                                            <hr class="offset-sm">
+                                            <p>
+                                                "...I am very happy with this purchase. It is very easy to use."
+                                            </p>
+                                            <p>
+                                                -C. G.
+                                            </p>
+                                            <hr class="offset-md">
+                                            <hr class="offset-md">
+
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+
+                        <ul class="markers visible-sm">
+                            <li data-marker="1" data-style="white" class="active"></li>
+                            <li data-marker="2" data-style="white"></li>
+                            <li data-marker="3" data-style="white"></li>
+                            <li data-marker="4" data-style="white"></li>
+                            <li data-marker="5" data-style="white"></li>
+                        </ul>
+
+                    </div>
+                </div>
+            </div>
+
+
+        </div>
+    </div>
+</section>
+
+
+<hr class="offset-lg">
+<section class="products">
+    <div class="container">
+        <hr class="offset-lg">
+        <div class="row align-center">
+            @foreach (var item in Model)
+            {
+                <div class="col-sm-6 col-md-3 product">
+                    <div class="body">
+                        <div style="height:262px">
+                            <a href="/Product/Details?id=@item.ProductId"><img src="@Url.Content(item.ProfileImage)" alt="@item.ProductName" height="260" class="img-responsive" /></a>
+                        </div>
+                        <div class="content align-center">
+                            <div style="height:200px">
+                                <h2 class="h3"><strong>@item.ProductName</strong></h2>
+                                <p class="">@item.CartDescription</p>
+                                <hr class="offset-sm">
+                            </div>
+
+                            <a class="btn btn-primary btn-block btn-sm square" href="/Product/Details?id=@item.ProductId">Learn more</a>
+                            <a class="btn btn-primary btn-block btn-sm square" href="@Html.Raw(item.Amazonlink)"> <i class="ion-bag"></i>Buy on amazon</a>
+                        </div>
+                    </div>
+                </div>
+
+            }
+            @if (Model.Count() < 4)
+            {
+                <div class="col-sm-6 col-md-3 product">
+                    <div class="body">
+                        @*<img src="~/StaticImages/camera charger with wifi.jpg" />*@
+                        <div style="height:262px">
+                            <img src="~/StaticImages/camera charger with wifi.jpg" height="260" class="img-responsive" />
+                        </div>
+                        <div class="content align-center">
+                            <div style="height:200px">
+                                <h2 class="h3"><strong>Wireless Camera Charger</strong></h2>
+                                <p class="">This wireless camera charger will let you live stream video on app once the device is connected to router wifi. You can also set  motion detection record on Micro SD card to save capacity.</p>
+                                <hr class="offset-sm">
+                            </div>
+
+                            <a class="btn btn-primary btn-block btn-sm square" href="#">Learn more</a>
+                            <a class="btn btn-primary btn-block btn-sm square" href="#"> <i class="ion-bag"></i>Buy on amazon</a>
+                        </div>
+                    </div>
+                </div>
+            }
+        </div>
+
+        <div class="align-center align-center-xs">
+            <hr class="offset-sm">
+            <a href="/Product/index" class="btn btn-primary black">View all products</a>
+        </div>
+    </div>
+</section>

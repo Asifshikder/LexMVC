@@ -1,0 +1,60 @@
+﻿@model LexMVC.Models.AboutUs
+@{
+    ViewData["Title"] = "About us";
+
+}
+<hr class="offset-lg">
+<hr class="offset-lg">
+<div class="">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 item">
+            <div class="text-center">
+                <div style="background-color:white">
+                    <h2 class="h3 black">About us</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+@if (Model != null)
+{
+    <section class="blog">
+        <div class="container">
+
+            <div class="row">
+
+                <div class="col-sm-4 col-md-4 item" style=" background: white; min-height: 273px;">
+                    <div class="text-center">
+                        <div class="hidden-xs hidden-sm">
+
+                            <img src="@Url.Content(Model.ImageUrl)" width="540" />
+                        </div>
+                        <div class="visible-sm">
+                            <img src="@Url.Content(Model.ImageUrl)" width="400" />
+
+                        </div>
+                        <div class="visible-xs">
+                            <img src="@Url.Content(Model.ImageUrl)" width="400" />
+
+                        </div>
+                    </div>
+                </div>
+
+                <div class="col-sm-8 col-md-8 item" style=" background: white; min-height: 273px;">
+
+                    <div class="caption">
+                        <h2 class="h3">@Model.Title</h2>
+                        <hr class="offset-sm">
+
+                        <p>@Html.Raw(Model.Details)</p>
+                        <hr class="offset-sm">
+
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </section>  }

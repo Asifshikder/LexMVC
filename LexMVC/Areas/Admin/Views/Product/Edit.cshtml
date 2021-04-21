@@ -1,0 +1,216 @@
+﻿@model LexMVC.Models.ProductVM
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+@Html.AntiForgeryToken()
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Product/Index">Product</a>
+        </li>
+        <li class="breadcrumb-item active">Update</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i>Product
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Edit", "Product", FormMethod.Post, new { enctype = "multipart/formdata" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.ProductId)
+                    @Html.HiddenFor(s => s.FeatureImage1)
+                    @Html.HiddenFor(s => s.FeatureImage2)
+                    @Html.HiddenFor(s => s.FeatureImage3)
+                    @Html.HiddenFor(s => s.FeatureImage4)
+                    @Html.HiddenFor(s => s.FeatureImage5)
+                    @Html.HiddenFor(s => s.ProfileImage)
+                    @Html.HiddenFor(s => s.ProfileImage1)
+                    @Html.HiddenFor(s => s.ProfileImage2)
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Name</label>
+                                @Html.EditorFor(model => model.ProductName, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Amazon Link</label>
+                                @Html.EditorFor(model => model.Amazonlink, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Short Description</label>
+                                @Html.EditorFor(model => model.ShortDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Cart Description</label>
+                                @Html.EditorFor(model => model.CartDescription, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Video Title</label>
+                                @Html.EditorFor(model => model.VideoName, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Video link(IFrame from youtube)</label>
+                                @Html.EditorFor(model => model.VideoUrl, new { htmlAttributes = new { @class = "form-control" } })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    Is feature(If this marked it will show in the homepage)
+                                    @Html.CheckBoxFor(model => model.IsFeature, new { htmlAttributes = new { value = "true", type = "checkbox" } })
+                                </label>
+                            </div>
+                        </div>
+
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Descrption(Product List)</label>
+                                @Html.TextAreaFor(model => model.Description, new { @class = "summernote" })
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Details(Both in list and details)</label>
+                                @Html.TextAreaFor(model => model.OtherDescription, new { @class = "summernote" })
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <h4>Primary images</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if (Model.ProfileImage != null)
+                                {
+                                    <input type="file" name="ProfileImageFile" id="ProfileImageFile" class="form-control dropify" data-default-file="@Url.Content(Model.ProfileImage)">
+                                }
+                                else
+                                {
+                                    <input type="file" name="ProfileImageFile" id="ProfileImageFile" class="form-control dropify">
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if (Model.ProfileImage1 != null)
+                                {
+                                    <input type="file" name="ProfileImage1File" id="ProfileImage1File" class="form-control dropify" data-default-file="@Url.Content(Model.ProfileImage1)">
+                                }
+                                else
+                                {
+                                    <input type="file" name="ProfileImage1File" id="ProfileImage1File" class="form-control dropify">
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if (Model.ProfileImage2 != null)
+                                {
+                                    <input type="file" name="ProfileImage2File" id="ProfileImage2File" class="form-control dropify" data-default-file="@Url.Content(Model.ProfileImage2)">
+                                }
+                                else
+                                {
+                                    <input type="file" name="ProfileImage2File" id="ProfileImage2File" class="form-control dropify">
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <h4>Feature images</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if (Model.FeatureImage1 != null)
+                                {
+                                    <input type="file" name="FeatureImage1File" id="FeatureImage1File" class="form-control dropify" data-default-file="@Url.Content(Model.FeatureImage1)">
+                                }
+                                else
+                                {
+                                    <input type="file" name="FeatureImage1File" id="FeatureImage1File" class="form-control dropify">
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if (Model.FeatureImage2 != null)
+                                {
+                                    <input type="file" name="FeatureImage2File" id="FeatureImage2File" class="form-control dropify" data-default-file="@Url.Content(Model.FeatureImage2)">
+                                }
+                                else
+                                {
+                                    <input type="file" name="FeatureImage2File" id="FeatureImage2File" class="form-control dropify">
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if (Model.FeatureImage3 != null)
+                                {
+                                    <input type="file" name="FeatureImage3File" id="FeatureImage3File" class="form-control dropify" data-default-file="@Url.Content(Model.FeatureImage3)">
+                                }
+                                else
+                                {
+                                    <input type="file" name="FeatureImage3File" id="FeatureImage3File" class="form-control dropify">
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if (Model.FeatureImage4 != null)
+                                {
+                                    <input type="file" name="FeatureImage4File" id="FeatureImage4File" class="form-control dropify" data-default-file="@Url.Content(Model.FeatureImage4)">
+                                }
+                                else
+                                {
+                                    <input type="file" name="FeatureImage4File" id="FeatureImage4File" class="form-control dropify">
+                                }
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                @if (Model.FeatureImage5 != null)
+                                {
+                                    <input type="file" name="FeatureImage5File" id="FeatureImage5File" class="form-control dropify" data-default-file="@Url.Content(Model.FeatureImage5)">
+                                }
+                                else
+                                {
+                                    <input type="file" name="FeatureImage5File" id="FeatureImage5File" class="form-control dropify">
+                                }
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="btn btn-block btn-success" type="submit">Update</button>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.dropify').dropify();
+            $('.summernote').summernote({
+                tabsize: 2,
+                height: 200
+            });
+        });
+
+    </script>
+}

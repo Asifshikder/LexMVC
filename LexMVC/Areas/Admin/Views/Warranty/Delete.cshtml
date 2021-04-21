@@ -1,0 +1,54 @@
+﻿@model LexMVC.Models.Warranty
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@Html.AntiForgeryToken()
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Warranty/Index">Warranty</a>
+        </li>
+        <li class="breadcrumb-item active">Create</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i>Warranty
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Delete", "Warranty", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.WarrantyId)
+                    @Html.HiddenFor(s => s.Email)
+                    @Html.HiddenFor(s => s.FullName)
+                    @Html.HiddenFor(s => s.OrderCode)
+                    @Html.HiddenFor(s => s.AvailDate)
+                    <div class="row">
+                        <p>Are you sure to delete this warranty info?</p>
+
+                        <div class="col-12 text-center">
+                            <button class="btn btn-block btn-danger" type="submit">Delete</button>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.summernote').summernote({
+                tabsize: 2,
+                height: 200
+            });
+        });
+
+    </script>
+}

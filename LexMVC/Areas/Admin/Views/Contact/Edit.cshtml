@@ -1,0 +1,58 @@
+﻿@model LexMVC.Models.ContactUs
+@{
+    ViewData["Title"] = "Update";
+}
+
+
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Contact/Index">Contact us</a>
+        </li>
+        <li class="breadcrumb-item active">Update</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i> Contact us
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm())
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.ContactUsId)
+                <div class="form-group">
+                    <label class="control-label">Name</label>
+                    @Html.EditorFor(model => model.Title, new { htmlAttributes = new { @class = "form-control" } })
+                </div>
+                    <div class="form-group">
+                        <label class="control-label">Description</label>
+                        @Html.TextAreaFor(model => model.Description, new { @class = "form-control summernote" })
+                    </div>
+                    <div class="form-group">
+                        <label class="control-label">Map IFrame</label>
+                        @Html.EditorFor(model => model.MapUrl, new { htmlAttributes = new { @class = "form-control" } })
+                    </div>
+                    <div class="form-group">
+                        <button type="submit" class="btn btn-primary">Update</button>
+                    </div>
+                }
+                </div>
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.dropify').dropify();
+            $('.summernote').summernote({
+                tabsize: 2,
+                height: 500
+            });
+        });
+
+    </script>
+}

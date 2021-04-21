@@ -1,0 +1,87 @@
+﻿@model LexMVC.Models.Product
+@{
+    ViewData["Title"] = "Delete";
+}
+
+@Html.AntiForgeryToken()
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Product/Index">Product</a>
+        </li>
+        <li class="breadcrumb-item active">Create</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i>Product
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Delete", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    @Html.HiddenFor(s => s.ProductId)
+                    @Html.HiddenFor(s => s.FeatureImage1)
+                    @Html.HiddenFor(s => s.FeatureImage2)
+                    @Html.HiddenFor(s => s.FeatureImage3)
+                    @Html.HiddenFor(s => s.FeatureImage4)
+                    @Html.HiddenFor(s => s.FeatureImage5)
+                    @Html.HiddenFor(s => s.ProfileImage)
+                    @Html.HiddenFor(s => s.ProfileImage1)
+                    @Html.HiddenFor(s => s.ProfileImage2)
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><b>Name:</b></label>
+                                <span>@Html.DisplayFor(s => s.ProductName)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><b>Short Description:</b></label>
+                                <span>@Html.DisplayFor(s => s.ShortDescription)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><b>Video Title:</b></label>
+                                <span>@Html.DisplayFor(s => s.VideoName)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><b>Video link(IFrame from youtube):</b></label>
+                                <span>@Html.DisplayFor(s => s.VideoUrl)</span>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label"><b>Descrption:</b></label>
+                                @Html.TextAreaFor(model => model.Description, new { @class = "summernote", @disabled = "true" })
+                            </div>
+                        </div>
+
+                        <div class="col-12 text-center">
+                            <button class="btn btn-block btn-danger" type="submit">Delete</button>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.summernote').summernote({
+                tabsize: 2,
+                height: 200
+            });
+        });
+
+    </script>
+}

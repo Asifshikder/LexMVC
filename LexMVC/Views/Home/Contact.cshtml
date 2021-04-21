@@ -1,0 +1,78 @@
+﻿@model LexMVC.Models.ContactUs
+@{
+    ViewData["Title"] = "Contact us";
+}
+<style>
+    .mapouter {
+        position: relative;
+        text-align: right;
+        width: 300px;
+        height: 300px;
+    }
+
+    .gmap_canvas {
+        overflow: hidden;
+        background: none !important;
+        width: 300px;
+        height: 300px;
+    }
+
+    .gmap_iframe {
+        width: 300px !important;
+        height: 300px !important;
+    }
+</style>
+<hr class="offset-lg">
+<hr class="offset-lg">
+<div class="">
+
+    <div class="row">
+
+        <div class="col-sm-12 col-md-12 item">
+            <div class="text-center">
+                <div style="background-color:white">
+                    <h2 class="h3 black">Contact</h2>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
+<section class="blog">
+    <div class="container">
+
+        <div class="row">
+            @if (Model != null)
+            {
+                <div class="col-sm-7 col-md-7 item" style=" background: white; min-height: 273px;">
+                    <div class="text-center">
+                        @Html.Raw(Model.MapUrl)
+
+                        @*<div></div>*@
+                    </div>
+                </div>
+
+                <div class="col-sm-5 col-md-5 item" style=" background: white; min-height: 273px;">
+
+                    <div class="caption">
+                        <h2 class="h3">@Model.Title</h2>
+                        <hr class="offset-sm">
+
+                        <div>@Html.Raw(Model.Description)</div>
+                        <hr class="offset-sm">
+
+                    </div>
+                </div>
+            }
+            else
+            {
+                <div class="col-sm-12 col-md-12 item" style=" background: white; min-height: 273px;">
+                    <div class="text-center">
+                        Nothing has set yet. You can set data from admin panel.
+                    </div>
+                </div>
+            }
+        </div>
+
+    </div>
+</section>

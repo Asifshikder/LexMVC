@@ -1,0 +1,153 @@
+﻿@model LexMVC.Models.ProductVM
+@{
+    ViewData["Title"] = "Create";
+}
+
+
+@Html.AntiForgeryToken()
+<div class="container-fluid">
+    <ol class="breadcrumb">
+        <li class="breadcrumb-item">
+            <a href="/Admin/Product/Index">Product</a>
+        </li>
+        <li class="breadcrumb-item active">Create</li>
+    </ol>
+    <div class="card mb-3">
+        <div class="card-header">
+            <i class="fa fa-table"></i>Product
+        </div>
+        <div class="card-body">
+            <div class="form-group">
+
+                @using (Html.BeginForm("Create", "Product", FormMethod.Post, new { enctype = "multipart/form-data" }))
+                {
+                    @Html.AntiForgeryToken()
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Name(Write product name in details)</label>
+                                <input class="form-control" name="ProductName" id="ProductName" required />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Amazon Link(Must included with all product)</label>
+                                <input class="form-control" name="Amazonlink" id="Amazonlink" required />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Short Description(Will display under product name)</label>
+                                <input class="form-control" name="ShortDescription" id="ShortDescription" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Cart Description(Only on home page product cart)</label>
+                                <input class="form-control" name="CartDescription" id="CartDescription" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Video Title</label>
+                                <input class="form-control" name="VideoName" id="VideoName" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">Video link(IFrame from youtube)</label>
+                                <input class="form-control" name="VideoUrl" id="VideoUrl" />
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label class="control-label">
+                                    Is feature(If this marked it will show in the homepage)<input class=""
+                                                                                                  id="IsFeature"
+                                                                                                  name="IsFeature"
+                                                                                                  type="checkbox"
+                                                                                                  value="true" />
+                                </label>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Descrption(Product List)</label>
+                                <textarea name="Description" id="Description" class="summernote" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label class="control-label">Details(Both in list and details)</label>
+                                <textarea name="OtherDescription" id="OtherDescription" class="summernote" required></textarea>
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <h4>Primary Images(Will appear on list as like profile image)</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="file" name="ProfileImageFile" id="ProfileImageFile" class="form-control dropify">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="file" name="ProfileImage1File" id="ProfileImage1File" class="form-control dropify">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="file" name="ProfileImage2File" id="ProfileImage2File" class="form-control dropify">
+                            </div>
+                        </div>
+                        <div class="col-md-12 text-center">
+                            <h4>Feature Images(Will apear in only details page)</h4>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="file" name="FeatureImage1File" id="FeatureImage1File" class="form-control dropify">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="file" name="FeatureImage2File" id="FeatureImage2File" class="form-control dropify">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="file" name="FeatureImage3File" id="FeatureImage3File" class="form-control dropify">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="file" name="FeatureImage4File" id="FeatureImage4File" class="form-control dropify">
+                            </div>
+                        </div>
+                        <div class="col-md-3">
+                            <div class="form-group">
+                                <input type="file" name="FeatureImage5File" id="FeatureImage5File" class="form-control dropify">
+                            </div>
+                        </div>
+                        <div class="col-12 text-center">
+                            <button class="btn btn-block btn-success" type="submit">Add product</button>
+                        </div>
+                    </div>
+                }
+            </div>
+
+        </div>
+    </div>
+</div>
+@section Scripts {
+
+    <script>
+        $(document).ready(function () {
+            $('.dropify').dropify();
+            $('.summernote').summernote({
+                tabsize: 2,
+                height: 200
+            });
+        });
+
+    </script>
+}
